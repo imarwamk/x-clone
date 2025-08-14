@@ -15,7 +15,7 @@ class PostCard extends StatelessWidget {
     if (timestamp is DateTime) {
       final now = DateTime.now();
       final diff = now.difference(timestamp);
-      if (diff.inMinutes < 1) return 'sic';
+      if (diff.inMinutes < 1) return 'Now';
       if (diff.inMinutes < 60) return '${diff.inMinutes} min';
       if (diff.inHours < 24) return '${diff.inHours} hr';
       if (diff.inDays < 7) return DateFormat('dd/MM/yyyy').format(timestamp);
@@ -71,7 +71,7 @@ class PostCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            "@${post['IMarwa_MK'] ?? 'IMarwa_MK'}",
+                            "@${post['author'] ?? 'Unknown'}",
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey.shade600,
