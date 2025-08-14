@@ -23,7 +23,7 @@ class _PostDetailsState extends State<PostDetails> {
     if (timestamp is DateTime) {
       final now = DateTime.now();
       final diff = now.difference(timestamp);
-      if (diff.inMinutes < 1) return 'seconds';
+      if (diff.inMinutes < 1) return 'Now';
       if (diff.inMinutes < 60) return '${diff.inMinutes} min';
       if (diff.inHours < 24) return '${diff.inHours} hr';
       if (diff.inDays < 7) return DateFormat('dd/MM/yyyy').format(timestamp);
@@ -73,7 +73,7 @@ class _PostDetailsState extends State<PostDetails> {
                               ),
                               const SizedBox(width: 5),
                               Text(
-                                '@${widget.data['IMarwa_MK'] ?? 'IMarwa_MK'}',
+                                '@${widget.data['author'] ?? 'UnKnown'}',
                                 style: TextStyle(
                                   color: Colors.grey.shade600,
                                   fontSize: 14,
