@@ -12,19 +12,20 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // تسوي كائن للشيريد بريفرينسس
   await SharedPrefsHelper().init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform);
     
-    await Supabase.initialize(
-      url: 'https://fcctwwdgqtfivesfbtct.supabase.co' ,
-      anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZjY3R3d2RncXRmaXZlc2ZidGN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI3MDMyNTQsImV4cCI6MjA2ODI3OTI1NH0.LFFGie5z36zMV1_B294tVody-oq00DJ0jXafjnoF70U',
-    );
+  await Supabase.initialize(
+    // TODO: Replace with your own Supabase project URL
+    url: 'https://YOUR_PROJECT_URL.supabase.co',
+
+    // TODO: Replace with your own Supabase anon/public API key
+    anonKey: 'YOUR_SUPABASE_ANON_KEY',
+  );
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      // لو كان مسجل يوجهة للهوم لو لا يروح  لصفحة تسجيل الدخول 
       home: SharedPrefsHelper().getString('userEmail') == null
       ? BlocProvider(
       create: (_) => LoginCubit(), 
@@ -33,5 +34,11 @@ void main() async {
     ),
   );
 }
+
+
+// TODO: Add your own Firebase config files:
+// android/app/google-services.json
+// ios/Runner/GoogleService-Info.plist
+
 
 
