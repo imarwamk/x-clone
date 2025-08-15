@@ -16,13 +16,13 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform);
     
-  await Supabase.initialize(
-    // TODO: Replace with your own Supabase project URL
-    url: 'https://YOUR_PROJECT_URL.supabase.co',
+  // await Supabase.initialize(
+  //   TODO: Replace with your own Supabase project URL
+  //   url: 'https://YOUR_PROJECT_URL.supabase.co',
 
-    // TODO: Replace with your own Supabase anon/public API key
-    anonKey: 'YOUR_SUPABASE_ANON_KEY',
-  );
+  //   TODO: Replace with your own Supabase anon/public API key
+  //   anonKey: 'YOUR_SUPABASE_ANON_KEY',
+  // );
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
